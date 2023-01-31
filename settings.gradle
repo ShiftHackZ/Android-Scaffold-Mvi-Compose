@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Scaffold Compose"
+
+def libraries = [
+        ':app',
+        ':core:ui',
+        ':presentation',
+] as String[]
+
+include libraries
+
+// Change each module's gradle filename - https://stackoverflow.com/a/30878796
+rootProject.children.each {
+    it.buildFileName = it.name + '.gradle'
+}

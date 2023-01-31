@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+apply from: "$project.rootDir/gradle/common.gradle"
+
+android {
+    namespace 'com.shifthackz.scaffold.compose'
+    defaultConfig {
+        applicationId "com.shifthackz.scaffold.compose"
+    }
+}
+
+dependencies {
+    api project(":presentation")
+
+    implementation di.hilt
+    kapt di.hiltCompiler
+}
+
+kapt {
+    correctErrorTypes true
+}

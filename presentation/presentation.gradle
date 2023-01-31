@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+apply from: "$project.rootDir/gradle/common.gradle"
+
+android {
+    namespace 'com.shifthackz.scaffold.presentation'
+}
+
+dependencies {
+    api project(":core:ui")
+    // COMPOSE
+    implementation platform(androidx.composeBom)
+    implementation androidx.composeMaterial3
+    implementation androidx.composeUiTooling
+    implementation androidx.composeActivity
+    implementation androidx.composeViewModel
+    implementation androidx.composeNavigation
+
+
+    implementation di.hilt
+    implementation di.hiltNavigationCompose
+    kapt di.hiltCompiler
+
+    implementation androidx.core
+    implementation androidx.appcompat
+    implementation androidx.activity
+    implementation google.material
+}

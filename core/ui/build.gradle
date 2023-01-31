@@ -1,0 +1,22 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+apply from: "$project.rootDir/gradle/common.gradle"
+
+android {
+    namespace 'com.shifthackz.scaffold.core.ui'
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.0"
+    }
+}
+
+dependencies {
+    api platform(androidx.composeBom)
+    api androidx.composeRuntime
+    api androidx.lifecycleViewModel
+}
