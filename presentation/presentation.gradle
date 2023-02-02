@@ -9,10 +9,17 @@ apply from: "$project.rootDir/gradle/common.gradle"
 
 android {
     namespace 'com.shifthackz.scaffold.presentation'
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.0"
+    }
 }
 
 dependencies {
     api project(":core:ui")
+    implementation project(":domain")
     // COMPOSE
     implementation platform(androidx.composeBom)
     implementation androidx.composeMaterial3

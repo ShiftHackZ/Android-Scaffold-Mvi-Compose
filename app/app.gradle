@@ -16,7 +16,7 @@ android {
 
 dependencies {
     api project(":presentation")
-
+    api project(":core:di")
     implementation di.hilt
     kapt di.hiltCompiler
 }
