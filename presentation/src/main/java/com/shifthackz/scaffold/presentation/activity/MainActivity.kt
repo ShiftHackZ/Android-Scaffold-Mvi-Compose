@@ -19,7 +19,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            NavHost(navController = navController, startDestination = "loader") {
+            NavHost(
+                navController = navController,
+                startDestination = "loader",
+            ) {
                 composable("loader") {
                     LoaderScreen(
                         viewModel = hiltViewModel(),

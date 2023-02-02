@@ -3,6 +3,7 @@ ext {
     hiltVersion = '2.44'
     retrofitVersion = '2.9.0'
     okHttpVersion = '5.0.0-alpha.11'
+    roomVersion = '2.5.0'
 
     androidx = [
             core: "androidx.core:core-ktx:1.9.0",
@@ -35,5 +36,10 @@ ext {
     okhttp = [
             core: "com.squareup.okhttp3:okhttp:$okHttpVersion",
             logging: "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+    ]
+    database = [
+            roomRuntime: "androidx.room:room-runtime:$roomVersion",
+            roomCompiler: "androidx.room:room-compiler:$roomVersion",
+            roomRx3: "androidx.room:room-rxjava3:$roomVersion",
     ]
 }

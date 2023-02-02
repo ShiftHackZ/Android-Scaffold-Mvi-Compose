@@ -1,4 +1,4 @@
-package com.shifthackz.scaffold.data.datasource
+package com.shifthackz.scaffold.data.remote
 
 import com.shifthackz.scaffold.domain.datasource.SampleDataSource
 import com.shifthackz.scaffold.network.api.SampleApi

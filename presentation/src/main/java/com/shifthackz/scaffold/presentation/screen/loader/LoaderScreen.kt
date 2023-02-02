@@ -12,6 +12,8 @@ class LoaderScreen(
     private val toastFn: (String) -> Unit,
 ) : MviScreen<EmptyState, LoaderEffect>(viewModel) {
 
+    override val statusBarColor: Color = Color.Cyan
+
     @Composable
     override fun Content() {
         Text("LoaderScreen")
