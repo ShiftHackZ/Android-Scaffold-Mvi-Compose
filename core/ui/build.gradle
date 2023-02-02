@@ -18,5 +18,7 @@ android {
 dependencies {
     api platform(androidx.composeBom)
     api androidx.composeRuntime
-    api androidx.lifecycleViewModel
+    implementation androidx.composeUiGraphics
+    implementation androidx.lifecycleViewModel
+    implementation google.accompanistSystemUiController
 }

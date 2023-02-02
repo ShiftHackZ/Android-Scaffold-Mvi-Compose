@@ -2,27 +2,45 @@
 
 package com.shifthackz.scaffold.core.ui
 
+import androidx.compose.ui.graphics.Color
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.luminance
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 abstract class MviScreen<S: MviState, E: MviEffect>(
     protected val viewModel: MviViewModel<S, E>,
 ) {
+    protected open val statusBarColor
+        get() = Color.Transparent
 
-//    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-//        throwable.printStackTrace()
-//    }
+    protected open val statusBarDarkIcons
+        get() = statusBarColor.luminance() > 0.5f
+
+    protected open val navigationBarColor
+        get() = Color.White
 
     @Composable
     fun Build() {
         LaunchedEffect(KEY_EFFECTS_PROCESSOR) {
             viewModel.effectStream.collect(::processEffect)
         }
+        ApplySystemUiColors()
         Content()
     }
 
     @Composable
     protected abstract fun Content()
+
+    @Composable
+    protected open fun ApplySystemUiColors() {
+        val systemUiController = rememberSystemUiController()
+        SideEffect {
+            systemUiController.setStatusBarColor(statusBarColor, statusBarDarkIcons)
+            systemUiController.setNavigationBarColor(navigationBarColor)
+        }
+    }
 
     protected open fun processEffect(effect: E) = Unit
 

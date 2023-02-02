@@ -1,8 +1,6 @@
 package com.shifthackz.scaffold.presentation.screen.loader
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.shifthackz.scaffold.core.ui.EmptyEffect
 import com.shifthackz.scaffold.core.ui.EmptyState
 import com.shifthackz.scaffold.core.ui.MviViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
