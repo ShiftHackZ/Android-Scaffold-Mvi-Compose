@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android'
 }
 
 apply from: "$project.rootDir/gradle/common.gradle"
@@ -28,10 +27,12 @@ dependencies {
     implementation androidx.composeViewModel
     implementation androidx.composeNavigation
 
-
-    implementation di.hilt
-    implementation di.hiltNavigationCompose
-    kapt di.hiltCompiler
+    implementation di.koinCore
+    implementation di.koinAndroid
+    implementation di.koinCompose
+//    implementation di.hilt
+//    implementation di.hiltNavigationCompose
+//    kapt di.hiltCompiler
 
     implementation androidx.core
     implementation androidx.appcompat

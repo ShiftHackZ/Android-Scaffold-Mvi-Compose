@@ -1,6 +1,7 @@
 ext {
     composeBomVersion = '2023.01.00'
-    hiltVersion = '2.44'
+    koinVersion = '3.3.3'
+    koinComposeVersion = '3.4.2'
     retrofitVersion = '2.9.0'
     okHttpVersion = '5.0.0-alpha.11'
     roomVersion = '2.5.0'
@@ -25,9 +26,9 @@ ext {
             accompanistSystemUiController: "com.google.accompanist:accompanist-systemuicontroller:0.28.0",
     ]
     di = [
-            hilt: "com.google.dagger:hilt-android:$hiltVersion",
-            hiltCompiler: "com.google.dagger:hilt-compiler:$hiltVersion",
-            hiltNavigationCompose: "androidx.hilt:hilt-navigation-compose:1.0.0",
+            koinCore: "io.insert-koin:koin-core:$koinVersion",
+            koinAndroid: "io.insert-koin:koin-android:$koinVersion",
+            koinCompose: "io.insert-koin:koin-androidx-compose:$koinComposeVersion",
     ]
     retrofit = [
             core: "com.squareup.retrofit2:retrofit:$retrofitVersion",

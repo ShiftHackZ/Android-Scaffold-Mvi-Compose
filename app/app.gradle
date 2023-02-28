@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android'
 }
 
 apply from: "$project.rootDir/gradle/common.gradle"
@@ -15,10 +14,14 @@ android {
 }
 
 dependencies {
-    api project(":presentation")
-    api project(":core:di")
-    implementation di.hilt
-    kapt di.hiltCompiler
+    implementation project(":presentation")
+    implementation project(":network")
+    implementation project(":storage")
+    implementation project(":domain")
+    implementation project(":data")
+    implementation di.koinCore
+    implementation di.koinAndroid
+    implementation di.koinCompose
 }
 
 kapt {

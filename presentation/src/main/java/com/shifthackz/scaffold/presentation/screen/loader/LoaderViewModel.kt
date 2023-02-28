@@ -4,13 +4,10 @@ import androidx.lifecycle.viewModelScope
 import com.shifthackz.scaffold.core.ui.EmptyState
 import com.shifthackz.scaffold.core.ui.MviViewModel
 import com.shifthackz.scaffold.domain.usecase.SampleUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class LoaderViewModel @Inject constructor(
+class LoaderViewModel(
     private val sampleUseCase: SampleUseCase,
 ) : MviViewModel<EmptyState, LoaderEffect>() {
 

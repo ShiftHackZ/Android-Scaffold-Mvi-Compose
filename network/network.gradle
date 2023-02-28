@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android'
 }
 
 apply from: "$project.rootDir/gradle/common.gradle"
@@ -17,6 +16,5 @@ dependencies {
     implementation retrofit.converterGson
     implementation okhttp.core
     implementation okhttp.logging
-    implementation di.hilt
-    kapt di.hiltCompiler
+    implementation di.koinCore
 }
